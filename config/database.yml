@@ -11,6 +11,7 @@ default: &default
   username: root
   password: root
   timeout: 5000
+  host: localhost
 
 development:
   <<: *default
