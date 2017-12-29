@@ -22,6 +22,13 @@ module Api
 					render json: {status: 'error', message: 'artigo não salvo', data: article.erros}, status: :unprocessable_entity
 				end
 			end
+
+			#remover artigo
+			def destroy
+				article = Article.find(params[:id])
+				article.destroy
+				render json: {status: 'success', message: 'artigo removido', data: article}, status: :ok
+			end
 			
 			#paramentros aceitos
 			def article_params
