@@ -6,6 +6,11 @@ module Api
 				articles = Article.order('created_at DESC');
 				render json: {status: 'success', message: 'artigos carregados', data: articles}, status: :ok
 			end
+			#detalhe do artigo passando ID
+			def show
+				article = Article.find(params[:id]);
+				render json: {status: 'success', message: 'artigo carregado', data: article}, status: :ok
+			end
 		end
 	end
 end
